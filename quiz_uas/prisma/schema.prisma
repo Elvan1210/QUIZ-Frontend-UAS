@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Gadget {
+  id        Int     @id @default(autoincrement())
+  name      String
+  brand     String
+  price     Int
+  createdAt DateTime @default(now())
+}
